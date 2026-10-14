@@ -66,3 +66,7 @@ Everything lives in `src/data/b2.js`. A track has lessons, and a lesson has ques
 ## License
 
 MIT
+
+## Weekly lessons (word pool)
+
+`src/data/pool.json` is a list of words and patterns to teach (`term`, `type`, `used`). A scheduled Claude Code task picks 5 unused items at random every week, writes one lesson in the "Fresh Weekly" track, marks those items `used: true` and opens a pull request for review. To steer the content, add or remove items in the file.
