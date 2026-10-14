@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from 'react';
 import { BADGES } from './data/badges.js';
 import { todayStr, yesterdayStr } from './util.js';
 
-const KEY = 'english-quest-v1';
+const KEY = 'english-quest-b2-v1';
 export const DAILY_GOAL = 30;
-export const XP_PER_LEVEL = 100;
+export const XP_PER_LEVEL = 150;
 
 const initial = () => ({
-  profile: { name: '', avatar: '🦊', lang: 'id', level: 'beginner', sound: true, voice: true, onboarded: false },
+  profile: { name: '', avatar: '0', lang: 'id', sound: true, voice: true, onboarded: false },
   xp: 0,
   streak: 0,
   lastDay: null,
@@ -113,4 +113,9 @@ export function useGame() {
   );
 
   return { state, updateProfile, completeLesson, reset };
+}
+
+// Player level (1, 2, 3 ...) maps to a rank title index.
+export function rankIndex(level, count = 7) {
+  return Math.min(level - 1, count - 1);
 }

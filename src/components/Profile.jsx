@@ -2,42 +2,62 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../App.jsx';
 import { BADGES } from '../data/badges.js';
-import { ALL_LESSONS } from '../data/index.js';
-import { effectiveStreak, playerLevel } from '../store.js';
+import { ALL_LESSONS } from '../data/b2.js';
+import { AVATAR_COLORS } from '../avatars.js';
+import { effectiveStreak, playerLevel, rankIndex, XP_PER_LEVEL } from '../store.js';
+import Icon from './Icon.jsx';
+import Avatar from './Avatar.jsx';
 
 function Toggle({ on, onChange, label }) {
   return (
     <button type="button" role="switch" aria-checked={on} aria-label={label} className={`toggle ${on ? 'on' : ''}`} onClick={() => onChange(!on)}>
-      <motion.span layout transition={{ type: 'spring', stiffness: 500, damping: 30 }} />
+      <motion.span layout transition={{ type: 'spring', stiffness: 500, damping: 32 }} />
     </button>
   );
 }
 
 export default function Profile() {
-  const { state, t, tr, updateProfile, reset, go } = useApp();
+  const { state, t, tr, updateProfile, reset } = useApp();
   const { profile } = state;
-  const { level } = playerLevel(state.xp);
+  const { level, into } = playerLevel(state.xp);
+  const ranks = t('ranks');
   const stars = Object.values(state.lessons).reduce((s, l) => s + (l.stars || 0), 0);
   const done = Object.values(state.lessons).filter((l) => l.stars > 0).length;
   const earned = BADGES.filter((b) => state.badges[b.id]).length;
 
+  const stats = [
+    ['bolt', state.xp, t('xp'), 'xp'],
+    ['flame', effectiveStreak(state), t('streak'), 'fire'],
+    ['star', stars, t('stars'), 'star'],
+    ['book', `${done}/${ALL_LESSONS.length}`, t('lessons'), 'book'],
+  ];
+
   return (
     <div className="profile">
-      <div className="profile-head">
-        <motion.div className="avatar huge" animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 2.4 }}>{profile.avatar}</motion.div>
-        <h2>{profile.name || t('appName')}</h2>
-        <div className="muted">{t('level')} {level}</div>
-      </div>
+      <header className="profile-head panel">
+        <Avatar color={profile.avatar} name={profile.name} size={72} />
+        <div className="grow">
+          <h1>{profile.name || t('appName')}</h1>
+          <p className="muted">{t('rank')} {level} · {ranks[rankIndex(level, ranks.length)]}</p>
+          <div className="bar slim"><motion.div className="bar-fill" initial={{ width: 0 }} animate={{ width: `${(into / XP_PER_LEVEL) * 100}%` }} /></div>
+        </div>
+      </header>
 
       <div className="stat-grid">
-        <div className="stat-card"><span>⚡</span><b>{state.xp}</b><small>{t('xp')}</small></div>
-        <div className="stat-card"><span>🔥</span><b>{effectiveStreak(state)}</b><small>{t('streak')}</small></div>
-        <div className="stat-card"><span>⭐</span><b>{stars}</b><small>{t('stars')}</small></div>
-        <div className="stat-card"><span>📘</span><b>{done}/{ALL_LESSONS.length}</b><small>{t('lessons')}</small></div>
+        {stats.map(([icon, val, label, tone], i) => (
+          <motion.div key={label} className="panel stat-tile" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
+            <span className={`stat-ico ${tone}`}><Icon name={icon} size={18} fill={icon !== 'book'} /></span>
+            <b>{val}</b>
+            <small>{label}</small>
+          </motion.div>
+        ))}
       </div>
 
-      <section className="card">
-        <h3>{t('badges')} <span className="muted small">{earned}/{BADGES.length}</span></h3>
+      <section className="panel">
+        <div className="row-between">
+          <h2>{t('badges')}</h2>
+          <span className="muted small">{earned}/{BADGES.length}</span>
+        </div>
         <div className="badge-grid">
           {BADGES.map((b, i) => {
             const got = !!state.badges[b.id];
@@ -45,12 +65,11 @@ export default function Profile() {
               <motion.div
                 key={b.id}
                 className={`badge-tile ${got ? 'got' : ''}`}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.04 }}
-                title={tr(b.desc)}
+                transition={{ delay: i * 0.03 }}
               >
-                <span className="badge-big">{got ? b.icon : '🔒'}</span>
+                <span className="badge-ico"><Icon name={got ? b.icon : 'lock'} size={22} /></span>
                 <strong>{tr(b.name)}</strong>
                 <small>{tr(b.desc)}</small>
               </motion.div>
@@ -59,22 +78,32 @@ export default function Profile() {
         </div>
       </section>
 
-      <section className="card">
-        <h3>{t('settings')}</h3>
+      <section className="panel">
+        <h2>{t('settings')}</h2>
         <div className="row">
           <span>{t('language')}</span>
-          <div className="seg small">
-            {[['id', 'ID'], ['en', 'EN']].map(([id, label]) => (
+          <div className="seg compact">
+            {[['id', 'Indonesia'], ['en', 'English']].map(([id, label]) => (
               <button key={id} className={profile.lang === id ? 'on' : ''} onClick={() => updateProfile({ lang: id })}>{label}</button>
+            ))}
+          </div>
+        </div>
+        <div className="row">
+          <span>{t('pickAvatar')}</span>
+          <div className="swatches small">
+            {AVATAR_COLORS.map(([a, b], i) => (
+              <button
+                key={i}
+                aria-label={`${t('colorLabel')} ${i + 1}`}
+                className={profile.avatar === String(i) ? 'on' : ''}
+                style={{ background: `linear-gradient(135deg, ${a}, ${b})` }}
+                onClick={() => updateProfile({ avatar: String(i) })}
+              />
             ))}
           </div>
         </div>
         <div className="row"><span>{t('sound')}</span><Toggle on={profile.sound} onChange={(v) => updateProfile({ sound: v })} label={t('sound')} /></div>
         <div className="row"><span>{t('voice')}</span><Toggle on={profile.voice} onChange={(v) => updateProfile({ voice: v })} label={t('voice')} /></div>
-        <div className="row">
-          <span>{t('changeLevel')}</span>
-          <button className="btn small ghost" onClick={() => go('home')}>{t('home')} →</button>
-        </div>
         <button
           className="btn danger-outline"
           onClick={() => {
