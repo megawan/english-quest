@@ -372,3 +372,4 @@ h3 { font-size: 1rem; font-weight: 700; }
 .guide-actions { display: grid; gap: 4px; max-width: 420px; margin: 0 auto; }
 .modal.wide { max-width: 640px; max-height: 88vh; overflow-y: auto; text-align: left; padding: 22px; display: block; }
 .guide-modal { z-index: 40; }
+.name-field { max-width: 200px; padding: 8px 12px; }

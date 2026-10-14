@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import { AnimatePresence, motion } from 'framer-motion';
 import { makeT, pick } from './i18n.js';
 import { useGame } from './store.js';
-import Onboarding from './components/Onboarding.jsx';
 import Home from './components/Home.jsx';
 import Lesson from './components/Lesson.jsx';
 import Profile from './components/Profile.jsx';
@@ -14,7 +13,7 @@ export const useApp = () => useContext(Ctx);
 export default function App() {
   const game = useGame();
   const { state } = game;
-  const { lang, onboarded } = state.profile;
+  const { lang } = state.profile;
   const [screen, setScreen] = useState('home');
   const [lessonId, setLessonId] = useState(null);
 
@@ -39,15 +38,14 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [screen, lessonId, onboarded]);
+  }, [screen, lessonId]);
 
   let view;
-  if (!onboarded) view = <Onboarding key="onboarding" />;
-  else if (screen === 'lesson' && lessonId) view = <Lesson key={`lesson-${lessonId}`} lessonId={lessonId} />;
+  if (screen === 'lesson' && lessonId) view = <Lesson key={`lesson-${lessonId}`} lessonId={lessonId} />;
   else if (screen === 'profile') view = <Profile key="profile" />;
   else view = <Home key="home" />;
 
-  const chrome = onboarded && screen !== 'lesson';
+  const chrome = screen !== 'lesson';
 
   return (
     <Ctx.Provider value={value}>
