@@ -81,6 +81,10 @@ export default function Profile() {
       <section className="panel">
         <h2>{t('settings')}</h2>
         <div className="row">
+          <span>{t('yourName')}</span>
+          <input className="text-input name-field" value={profile.name} maxLength={20} placeholder={t('namePlaceholder')} onChange={(e) => updateProfile({ name: e.target.value })} />
+        </div>
+        <div className="row">
           <span>{t('pickAvatar')}</span>
           <div className="swatches small">
             {AVATAR_COLORS.map(([a, b], i) => (

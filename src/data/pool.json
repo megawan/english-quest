@@ -1,0 +1,752 @@
+[
+ {
+  "term": "break the ice",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "once in a blue moon",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "the ball is in your court",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "cost an arm and a leg",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "let the cat out of the bag",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "beat around the bush",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "cut corners",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "on the same page",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "hit the books",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "back to square one",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "call it a day",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "a drop in the ocean",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "get cold feet",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "miss the boat",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "go the extra mile",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "on thin ice",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "pull someone's leg",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "the last straw",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "under pressure",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "a storm in a teacup",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "jump the gun",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "bite off more than you can chew",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "kill two birds with one stone",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "read between the lines",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "sit on the fence",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "throw in the towel",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "a red herring",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "at the end of the day",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "in hot water",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "steal the show",
+  "type": "idiom",
+  "used": false
+ },
+ {
+  "term": "bring up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "set up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "take over",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "give up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "look forward to",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "put off",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "figure out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "work out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "catch up with",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "drop out of",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "end up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "hold on",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "move on",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "pick up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "point out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "rule out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "sort out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "stand out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "take on",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "wear out",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "back up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "cut down on",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "deal with",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "fill in",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "hand in",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "keep up with",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "look up to",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "make up for",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "pass on",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "show up",
+  "type": "phrasal verb",
+  "used": false
+ },
+ {
+  "term": "make a decision",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "take a risk",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "do research",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "reach a conclusion",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "raise awareness",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "meet a deadline",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "draw attention to",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "heavy traffic",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "strong coffee",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "bitter disappointment",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "reach an agreement",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "pay a compliment",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "catch a cold",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "break a promise",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "run a business",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "give a presentation",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "take responsibility",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "make progress",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "do harm",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "keep a secret",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "launch a campaign",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "hold a meeting",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "play a role",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "bear in mind",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "gain experience",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "fall asleep",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "come to terms with",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "lose track of time",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "set a goal",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "wide range of",
+  "type": "collocation",
+  "used": false
+ },
+ {
+  "term": "Present perfect vs past simple",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Past perfect",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Past perfect continuous",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Future perfect",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Future continuous",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Used to vs would",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Be used to vs get used to",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Zero and first conditional",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Relative clauses (defining)",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Non-defining relative clauses",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Reduced relative clauses",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Participle clauses",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Gerund vs infinitive after remember",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Modal verbs of deduction",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Modals of past possibility",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Had better and would rather",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Quantifiers: few, a few, little, a little",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Articles: a, the, no article",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Comparatives and superlatives",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Double comparatives",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Subjunctive after suggest",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Inversion with hardly and scarcely",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Emphatic do",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Question tags",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Indirect questions",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Reported commands",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Passive reporting verbs",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Linking words of contrast",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Linking words of purpose",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "Ellipsis",
+  "type": "grammar",
+  "used": false
+ },
+ {
+  "term": "borrow / lend",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "bring / take",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "rise / raise",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "say / tell",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "hear / listen",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "look / see / watch",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "alternate / alternative",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "sensible / sensitive",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "principal / principle",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "remind / remember",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "lay / lie",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "fun / funny",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "historic / historical",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "altogether / all together",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "besides / beside",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "assure / ensure / insure",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "complement / compliment",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "emigrate / immigrate",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "exceptional / exceptionable",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "stationary / stationery",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "although / despite",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "as / like",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "so / such",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "maybe / perhaps (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "get vs obtain (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "start vs commence (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "ask vs enquire (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "help vs assist (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "buy vs purchase (register)",
+  "type": "word choice",
+  "used": false
+ },
+ {
+  "term": "enough vs sufficient (register)",
+  "type": "word choice",
+  "used": false
+ }
+]

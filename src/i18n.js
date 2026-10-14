@@ -79,6 +79,17 @@ export const strings = {
   example: 'Example',
   guideOpen: 'Guide',
   listen: 'Listen',
+  wordBank: 'Word Bank',
+  wordBankSub: 'Every idiom, phrasal verb, collocation and grammar pattern from the lessons.',
+  searchWords: 'Search words and meanings',
+  allTypes: 'All',
+  savedOnly: 'Saved',
+  save: 'Save',
+  unsave: 'Remove from saved',
+  noWords: 'No words found.',
+  noSaved: 'Nothing saved yet. Tap the bookmark on any word.',
+  words: 'words',
+  fromLesson: 'From',
 };
 
 export function makeT() {

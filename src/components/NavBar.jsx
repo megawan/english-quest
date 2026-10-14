@@ -10,6 +10,7 @@ export default function NavBar({ screen }) {
   const { t, go, state } = useApp();
   const items = [
     { id: 'home', icon: 'home', label: t('home') },
+    { id: 'words', icon: 'bookmark', label: t('wordBank') },
     { id: 'profile', icon: 'chart', label: t('profile') },
   ];
   return (

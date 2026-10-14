@@ -372,3 +372,18 @@ h3 { font-size: 1rem; font-weight: 700; }
 .guide-actions { display: grid; gap: 4px; max-width: 420px; margin: 0 auto; }
 .modal.wide { max-width: 640px; max-height: 88vh; overflow-y: auto; text-align: left; padding: 22px; display: block; }
 .guide-modal { z-index: 40; }
+.name-field { max-width: 200px; padding: 8px 12px; }
+
+/* Word Bank and bookmarks */
+.point-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.bm-btn { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: var(--muted); }
+.bm-btn:hover { background: var(--accent-soft); color: var(--accent); }
+.bm-btn.on { color: var(--accent); }
+.wb-search { position: relative; margin-bottom: 12px; }
+.wb-search .icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.wb-search .text-input { padding-left: 40px; }
+.wb-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font-size: 0.85rem; font-weight: 600; }
+.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wb-meta { margin: 8px 0 0 !important; }
+.wordbank { padding-bottom: 24px; }
