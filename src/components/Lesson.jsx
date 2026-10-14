@@ -9,6 +9,7 @@ import { playSound } from '../sound.js';
 import { shuffle } from '../util.js';
 import Icon from './Icon.jsx';
 import Stars from './Stars.jsx';
+import Guide from './Guide.jsx';
 
 const MAX_HEARTS = 5;
 const CONFETTI_COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#0ea5e9'];
@@ -146,7 +147,8 @@ export default function Lesson({ lessonId }) {
   const [hearts, setHearts] = useState(MAX_HEARTS);
   const [mistakes, setMistakes] = useState(0);
   const [correctFirst, setCorrectFirst] = useState(0);
-  const [phase, setPhase] = useState('play'); // play | done | failed
+  const [phase, setPhase] = useState('guide'); // guide | play | done | failed
+  const [showGuide, setShowGuide] = useState(false);
   const [summary, setSummary] = useState(null);
   const [confirmQuit, setConfirmQuit] = useState(false);
   const [praise, setPraise] = useState('');
@@ -236,7 +238,7 @@ export default function Lesson({ lessonId }) {
 
   useEffect(() => {
     const onKey = (e) => {
-      if (phase !== 'play' || confirmQuit) return;
+      if (phase !== 'play' || confirmQuit || showGuide) return;
       if (e.key === 'Enter') {
         if (result) next();
         else if (canCheck) check();
@@ -248,6 +250,17 @@ export default function Lesson({ lessonId }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
+
+  if (phase === 'guide') {
+    return (
+      <div className="lesson-guide">
+        <div className="lesson-top">
+          <button className="x-btn" aria-label="Close" onClick={() => go('home')}><Icon name="x" size={22} /></button>
+        </div>
+        <Guide lesson={lesson} primaryLabel={t('guideStart')} onStart={() => setPhase('play')} />
+      </div>
+    );
+  }
 
   if (phase === 'failed') {
     return (
@@ -314,6 +327,7 @@ export default function Lesson({ lessonId }) {
       <div className="lesson-top">
         <button className="x-btn" aria-label="Close" onClick={() => setConfirmQuit(true)}><Icon name="x" size={22} /></button>
         <div className="bar thick"><motion.div className="bar-fill" animate={{ width: `${progress}%` }} transition={{ duration: 0.4 }} /></div>
+        <button className="x-btn guide-btn" aria-label={t('guideLabel')} title={t('guideLabel')} onClick={() => setShowGuide(true)}><Icon name="book" size={20} /></button>
         <Hearts n={hearts} />
       </div>
 
@@ -363,6 +377,13 @@ export default function Lesson({ lessonId }) {
       </footer>
 
       <AnimatePresence>
+        {showGuide && (
+          <motion.div className="modal-back guide-modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div className="modal wide" initial={{ scale: 0.96, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.96, opacity: 0 }}>
+              <Guide lesson={lesson} primaryLabel={t('guideClose')} onStart={() => setShowGuide(false)} />
+            </motion.div>
+          </motion.div>
+        )}
         {confirmQuit && (
           <motion.div className="modal-back" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <motion.div className="modal" initial={{ scale: 0.92, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.92, opacity: 0 }}>
