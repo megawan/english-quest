@@ -30,7 +30,11 @@ npm run preview  # preview the production build
 ## Deployment
 
 Every push to `main` is built and published to GitHub Pages by `.github/workflows/deploy.yml`.
-In the repository settings, set **Pages → Source** to **GitHub Actions**.
+In the repository settings, set **Pages → Source** to **GitHub Actions**, then re-run the workflow
+(Actions → Deploy to GitHub Pages → Run workflow).
+
+**Blank page?** It means Pages is serving the repository files directly (Source: *Deploy from a branch*)
+instead of the build output. Switch the source to *GitHub Actions* as described above.
 
 ## Adding lessons
 

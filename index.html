@@ -10,6 +10,25 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>English Quest needs JavaScript. / English Quest membutuhkan JavaScript.</noscript>
+    <script>
+      // If the app never mounts, the site is most likely being served from the
+      // source branch instead of the GitHub Actions build. Say so instead of
+      // leaving a blank page.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var root = document.getElementById('root');
+          if (root && !root.children.length) {
+            root.innerHTML =
+              '<div style="font-family:system-ui,sans-serif;max-width:480px;margin:48px auto;padding:0 16px;line-height:1.5">' +
+              '<h2>English Quest</h2>' +
+              '<p>The app could not start. If you are the site owner: open <b>Settings &rarr; Pages</b> and set <b>Source</b> to <b>GitHub Actions</b>, then re-run the deploy workflow.</p>' +
+              '<p>Aplikasi tidak bisa dimulai. Jika kamu pemilik situs: buka <b>Settings &rarr; Pages</b>, ubah <b>Source</b> ke <b>GitHub Actions</b>, lalu jalankan ulang workflow deploy.</p>' +
+              '</div>';
+          }
+        }, 2500);
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
