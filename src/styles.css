@@ -194,7 +194,9 @@ h3 { font-size: 1rem; font-weight: 700; }
 
 /* Lesson */
 .app:not(.with-nav) .screen { max-width: 720px; padding: 0; }
-.lesson { min-height: 100vh; display: flex; flex-direction: column; padding: 18px 16px 190px; }
+.lesson { min-height: 100vh; display: flex; flex-direction: column; padding: 18px 16px 260px; }
+.lesson-guide { min-height: 100vh; padding: 18px 16px 40px; max-width: 720px; margin: 0 auto; }
+.guide-btn { margin-left: 2px; }
 .lesson-top { display: flex; align-items: center; gap: 14px; }
 .x-btn { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; color: var(--muted); }
 .x-btn:hover { background: var(--surface-2); color: var(--ink); }
@@ -352,3 +354,21 @@ h3 { font-size: 1rem; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* Lesson guide */
+.guide { padding-top: 10px; text-align: left; }
+.guide h1 { margin-bottom: 12px; }
+.guide-intro { color: var(--ink-2); font-size: 1.02rem; line-height: 1.7; margin-bottom: 22px; }
+.guide-sub { margin-bottom: 10px; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.guide-points { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; }
+.guide-point { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow-sm); }
+.guide-point strong { font-size: 1.05rem; letter-spacing: -0.01em; }
+.guide-point p { margin: 4px 0 10px; color: var(--ink-2); }
+.guide-example { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 12px; border-radius: 10px; background: var(--accent-soft); }
+.ex-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.ex-text { flex: 1; font-weight: 600; font-style: italic; min-width: 12ch; }
+.ex-listen { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: var(--accent); }
+.ex-listen:hover { background: var(--accent); color: #fff; }
+.guide-actions { display: grid; gap: 4px; max-width: 420px; margin: 0 auto; }
+.modal.wide { max-width: 640px; max-height: 88vh; overflow-y: auto; text-align: left; padding: 22px; display: block; }
+.guide-modal { z-index: 40; }
