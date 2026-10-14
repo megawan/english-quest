@@ -5,6 +5,7 @@ import { useGame } from './store.js';
 import Home from './components/Home.jsx';
 import Lesson from './components/Lesson.jsx';
 import Profile from './components/Profile.jsx';
+import WordBank from './components/WordBank.jsx';
 import NavBar from './components/NavBar.jsx';
 
 const Ctx = createContext(null);
@@ -42,6 +43,7 @@ export default function App() {
 
   let view;
   if (screen === 'lesson' && lessonId) view = <Lesson key={`lesson-${lessonId}`} lessonId={lessonId} />;
+  else if (screen === 'words') view = <WordBank key="words" />;
   else if (screen === 'profile') view = <Profile key="profile" />;
   else view = <Home key="home" />;
 

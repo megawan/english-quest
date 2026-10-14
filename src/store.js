@@ -14,6 +14,7 @@ const initial = () => ({
   daily: { date: todayStr(), xp: 0 },
   lessons: {},
   badges: {},
+  saved: {},
   perfectCount: 0,
   goalsReached: 0,
 });
@@ -59,9 +60,18 @@ export function useGame() {
     setState((s) => ({ ...s, profile: { ...s.profile, ...patch } }));
   }, []);
 
+  const toggleSaved = useCallback((key) => {
+    setState((s) => {
+      const saved = { ...s.saved };
+      if (saved[key]) delete saved[key];
+      else saved[key] = todayStr();
+      return { ...s, saved };
+    });
+  }, []);
+
   const reset = useCallback(() => {
     const fresh = initial();
-    setState({ ...fresh, profile: { ...state.profile } });
+    setState({ ...fresh, profile: { ...state.profile }, saved: state.saved });
   }, [state.profile]);
 
   // Applies the result of a finished lesson and reports what was unlocked.
@@ -112,7 +122,7 @@ export function useGame() {
     [state],
   );
 
-  return { state, updateProfile, completeLesson, reset };
+  return { state, updateProfile, completeLesson, toggleSaved, reset };
 }
 
 // Player level (1, 2, 3 ...) maps to a rank title index.
