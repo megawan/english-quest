@@ -14,7 +14,7 @@ export const useApp = () => useContext(Ctx);
 export default function App() {
   const game = useGame();
   const { state } = game;
-  const { lang, level, onboarded } = state.profile;
+  const { lang, onboarded } = state.profile;
   const [screen, setScreen] = useState('home');
   const [lessonId, setLessonId] = useState(null);
 
@@ -24,15 +24,22 @@ export default function App() {
       lang,
       t: makeT(lang),
       tr: (obj) => pick(obj, lang),
-      kids: level === 'kids',
       go: setScreen,
       openLesson: (id) => {
         setLessonId(id);
         setScreen('lesson');
       },
     }),
-    [game, lang, level],
+    [game, lang],
   );
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen, lessonId, onboarded]);
 
   let view;
   if (!onboarded) view = <Onboarding key="onboarding" />;
@@ -40,28 +47,24 @@ export default function App() {
   else if (screen === 'profile') view = <Profile key="profile" />;
   else view = <Home key="home" />;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [screen, lessonId, onboarded]);
-
-  const showNav = onboarded && screen !== 'lesson';
+  const chrome = onboarded && screen !== 'lesson';
 
   return (
     <Ctx.Provider value={value}>
-      <div className={`app ${level === 'kids' ? 'kids' : ''}`}>
+      <div className={`app ${chrome ? 'with-nav' : ''}`}>
+        {chrome && <NavBar screen={screen} />}
         <AnimatePresence mode="wait">
           <motion.main
             key={view.key}
             className="screen"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.22 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
           >
             {view}
           </motion.main>
         </AnimatePresence>
-        {showNav && <NavBar screen={screen} />}
       </div>
     </Ctx.Provider>
   );
