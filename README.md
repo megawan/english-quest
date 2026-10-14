@@ -16,7 +16,7 @@ Five skill tracks, 15 lessons, 116 questions:
 | Reading & Cloze | Short texts, inference questions, gap-fills |
 | Word Choice & Register | Easily confused words, formal vs informal, word formation |
 
-Every answer comes with a short explanation, and wrong answers come back at the end of the lesson.
+Each lesson starts with a short guide that explains the idea, when to use it, and gives examples. Every answer then comes with a plain-English note, and wrong answers come back at the end of the lesson.
 
 ## Gamification
 
@@ -24,7 +24,7 @@ XP and ranks, daily goal ring, day streaks, hearts, 1-3 star ratings per lesson,
 
 ## Features
 
-- Interface in Bahasa Indonesia or English, switchable at any time (lesson content is English)
+- Everything is in English, with a plain-English guide before each lesson and a short explanation after every answer
 - Sentences can be read aloud with the browser's speech synthesis
 - Keyboard friendly: press 1-4 to answer, Enter to continue
 - Light and dark themes follow the system setting

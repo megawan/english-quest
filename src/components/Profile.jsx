@@ -81,14 +81,6 @@ export default function Profile() {
       <section className="panel">
         <h2>{t('settings')}</h2>
         <div className="row">
-          <span>{t('language')}</span>
-          <div className="seg compact">
-            {[['id', 'Indonesia'], ['en', 'English']].map(([id, label]) => (
-              <button key={id} className={profile.lang === id ? 'on' : ''} onClick={() => updateProfile({ lang: id })}>{label}</button>
-            ))}
-          </div>
-        </div>
-        <div className="row">
           <span>{t('pickAvatar')}</span>
           <div className="swatches small">
             {AVATAR_COLORS.map(([a, b], i) => (

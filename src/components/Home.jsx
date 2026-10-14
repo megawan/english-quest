@@ -122,7 +122,7 @@ export default function Home() {
                           <span className="lesson-body">
                             <strong>{tr(lesson.title)}</strong>
                             <span className="muted tiny">
-                              {unlocked ? `${lesson.questions.length} ${t('qCount')}` : t('locked')}
+                              {unlocked ? lesson.guide.summary : t('locked')}
                             </span>
                           </span>
                           {rec?.stars ? <Stars n={rec.stars} size={15} /> : status === 'current' ? <span className="go"><Icon name="arrow" size={18} /></span> : null}

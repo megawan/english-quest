@@ -9,12 +9,11 @@ import Logo from './Logo.jsx';
 
 export default function Onboarding() {
   const { state, updateProfile } = useApp();
-  const [lang, setLang] = useState(state.profile.lang);
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState(state.profile.avatar);
-  const t = makeT(lang);
+  const t = makeT();
 
-  const start = () => updateProfile({ lang, avatar, name: name.trim(), onboarded: true });
+  const start = () => updateProfile({ avatar, name: name.trim(), onboarded: true });
   const features = [
     ['bolt', t('featXp')],
     ['flame', t('featStreak')],
@@ -41,15 +40,6 @@ export default function Onboarding() {
 
       <div className="ob-form">
         <h2>{t('welcome')}</h2>
-
-        <section className="field">
-          <label>{t('chooseLang')}</label>
-          <div className="seg">
-            {[['id', 'Bahasa Indonesia'], ['en', 'English']].map(([id, label]) => (
-              <button key={id} className={lang === id ? 'on' : ''} onClick={() => setLang(id)}>{label}</button>
-            ))}
-          </div>
-        </section>
 
         <section className="field">
           <label htmlFor="name">{t('yourName')}</label>
