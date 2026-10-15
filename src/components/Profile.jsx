@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../App.jsx';
 import { BADGES } from '../data/badges.js';
-import { ALL_LESSONS } from '../data/b2.js';
+import { lessonsOf } from '../data/levels.js';
 import { AVATAR_COLORS } from '../avatars.js';
 import { effectiveStreak, playerLevel, rankIndex, XP_PER_LEVEL } from '../store.js';
 import Icon from './Icon.jsx';
@@ -22,14 +22,15 @@ export default function Profile() {
   const { level, into } = playerLevel(state.xp);
   const ranks = t('ranks');
   const stars = Object.values(state.lessons).reduce((s, l) => s + (l.stars || 0), 0);
-  const done = Object.values(state.lessons).filter((l) => l.stars > 0).length;
+  const levelLessons = lessonsOf(profile.level);
+  const done = levelLessons.filter((l) => state.lessons[l.id]?.stars > 0).length;
   const earned = BADGES.filter((b) => state.badges[b.id]).length;
 
   const stats = [
     ['bolt', state.xp, t('xp'), 'xp'],
     ['flame', effectiveStreak(state), t('streak'), 'fire'],
     ['star', stars, t('stars'), 'star'],
-    ['book', `${done}/${ALL_LESSONS.length}`, t('lessons'), 'book'],
+    ['book', `${done}/${levelLessons.length}`, t('lessons'), 'book'],
   ];
 
   return (

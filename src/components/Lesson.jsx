@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { useApp } from '../App.jsx';
-import { getLesson } from '../data/b2.js';
+import { getLesson } from '../data/levels.js';
 import { buildQuestions } from '../data/build.js';
 import { speak, hasSpeech } from '../speech.js';
 import { playSound } from '../sound.js';

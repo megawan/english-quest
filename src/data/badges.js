@@ -1,6 +1,8 @@
 import { TRACKS } from './b2.js';
+import { TRACKS as B1_TRACKS } from './b1.js';
 
-const trackDone = (state, id) => TRACKS.find((t) => t.id === id).lessons.every((l) => state.lessons[l.id]?.stars > 0);
+const lessonsAllDone = (state, lessons) => lessons.every((l) => state.lessons[l.id]?.stars > 0);
+const trackDone = (state, id) => lessonsAllDone(state, TRACKS.find((t) => t.id === id).lessons);
 const lessonsDone = (state) => Object.values(state.lessons).filter((l) => l.stars > 0).length;
 const totalStars = (state) => Object.values(state.lessons).reduce((s, l) => s + (l.stars || 0), 0);
 
@@ -18,5 +20,6 @@ export const BADGES = [
   { id: 'gr', icon: 'pen', name: 'Grammar Guru', desc: 'Finish the Grammar track', test: (s) => trackDone(s, 'gr') },
   { id: 'rd', icon: 'book', name: 'Close Reader', desc: 'Finish the Reading track', test: (s) => trackDone(s, 'rd') },
   { id: 'wc', icon: 'scale', name: 'Word Smith', desc: 'Finish the Word Choice track', test: (s) => trackDone(s, 'wc') },
-  { id: 'crown', icon: 'crown', name: 'B2 Champion', desc: 'Finish every lesson', test: (s) => TRACKS.every((t) => trackDone(s, t.id)) },
+  { id: 'crown-b1', icon: 'crown', name: 'B1 Champion', desc: 'Finish every B1 lesson', test: (s) => B1_TRACKS.every((t) => lessonsAllDone(s, t.lessons)) },
+  { id: 'crown', icon: 'crown', name: 'B2 Champion', desc: 'Finish every B2 lesson', test: (s) => TRACKS.every((t) => trackDone(s, t.id)) },
 ];

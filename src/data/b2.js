@@ -428,13 +428,3 @@ export const TRACKS = [
     ],
   },
 ];
-
-export const ALL_LESSONS = TRACKS.flatMap((t) => t.lessons.map((l) => ({ ...l, track: t.id })));
-
-export function getLesson(id) {
-  return ALL_LESSONS.find((l) => l.id === id);
-}
-
-export function getTrack(id) {
-  return TRACKS.find((t) => t.id === id);
-}

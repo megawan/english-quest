@@ -387,3 +387,4 @@ h3 { font-size: 1rem; font-weight: 700; }
 .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
 .wb-meta { margin: 8px 0 0 !important; }
 .wordbank { padding-bottom: 24px; }
+.level-switch { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
