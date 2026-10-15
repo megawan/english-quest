@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../App.jsx';
-import { TRACKS } from '../data/b2.js';
+import { LEVELS, LEVEL_IDS, levelOf } from '../data/levels.js';
 import { DAILY_GOAL, dailyXp, effectiveStreak, playerLevel, rankIndex, XP_PER_LEVEL } from '../store.js';
 import Icon from './Icon.jsx';
 import Stars from './Stars.jsx';
@@ -30,8 +30,10 @@ function Ring({ value, max, size = 84, stroke = 8, children }) {
 }
 
 export default function Home() {
-  const { state, t, tr, openLesson } = useApp();
+  const { state, t, tr, openLesson, updateProfile } = useApp();
   const { profile } = state;
+  const level = levelOf(profile.level);
+  const TRACKS = level.tracks;
   const { level: plvl, into } = playerLevel(state.xp);
   const ranks = t('ranks');
   const today = dailyXp(state);
@@ -44,9 +46,16 @@ export default function Home() {
     <div className="home">
       <header className="page-head">
         <div>
-          <p className="eyebrow">{t('hello')}{profile.name ? `, ${profile.name}` : ''} · {t('levelCode')} {t('level')}</p>
+          <p className="eyebrow">{t('hello')}{profile.name ? `, ${profile.name}` : ''} · {level.code} {level.name}</p>
           <h1>{t('homeTitle')}</h1>
           <p className="muted">{totalDone}/{totalAll} {t('lessonsDone')}</p>
+          <div className="level-switch" role="group" aria-label={t('chooseLevel')}>
+            {LEVEL_IDS.map((id) => (
+              <button key={id} type="button" className={`chip ${level.id === id ? 'on' : ''}`} aria-pressed={level.id === id} onClick={() => updateProfile({ level: id })}>
+                {LEVELS[id].code} · {LEVELS[id].name}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 

@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../App.jsx';
-import { TRACKS } from '../data/b2.js';
+import { levelOf } from '../data/levels.js';
 import { WORDS } from '../data/words.js';
 import { speak, hasSpeech } from '../speech.js';
 import Icon from './Icon.jsx';
@@ -10,6 +10,9 @@ export default function WordBank() {
   const [q, setQ] = useState('');
   const [type, setType] = useState('all');
   const [savedOnly, setSavedOnly] = useState(false);
+  const level = levelOf(state.profile.level);
+  const TRACKS = level.tracks;
+  useEffect(() => setType('all'), [level.id]);
   const canSpeak = state.profile.voice && hasSpeech();
   const trackName = (id) => TRACKS.find((tr) => tr.id === id)?.title;
 
@@ -17,19 +20,20 @@ export default function WordBank() {
     const needle = q.trim().toLowerCase();
     return WORDS.filter(
       (w) =>
+        w.level === level.id &&
         (type === 'all' || w.trackId === type) &&
         (!savedOnly || state.saved[w.key]) &&
         (!needle || `${w.term} ${w.text} ${w.example}`.toLowerCase().includes(needle)),
     );
-  }, [q, type, savedOnly, state.saved]);
+  }, [q, type, savedOnly, state.saved, level.id]);
 
-  const savedCount = Object.keys(state.saved).length;
+  const savedCount = WORDS.filter((w) => w.level === level.id && state.saved[w.key]).length;
 
   return (
     <div className="wordbank">
       <header className="page-head">
         <div>
-          <h1>{t('wordBank')}</h1>
+          <h1>{t('wordBank')} · {level.code}</h1>
           <p className="muted">{t('wordBankSub')}</p>
         </div>
       </header>

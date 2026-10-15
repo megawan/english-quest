@@ -1,6 +1,6 @@
 # English Quest
 
-Upper-intermediate (B2) English, learned through short quests with XP, ranks, daily streaks, and achievements.
+English at two levels, **B1 (lower-intermediate)** and **B2 (upper-intermediate)**, learned through short quests with XP, ranks, daily streaks, and achievements.
 
 **Live:** https://megawan.github.io/english-quest/
 
@@ -54,7 +54,7 @@ instead of the build output. Switch the source to *GitHub Actions* as described 
 
 ## Adding lessons
 
-Everything lives in `src/data/b2.js`. A track has lessons, and a lesson has questions written with the helpers in `src/data/helpers.js`:
+B2 lessons live in `src/data/b2.js` and B1 lessons in `src/data/b1.js` (`src/data/levels.js` joins them; the learner switches level on the Learn screen). A track has lessons, and a lesson has questions written with the helpers in `src/data/helpers.js`:
 
 - `fill(sentence, answer, wrongs, note)`: choose the right word or phrase for the blank (`___`)
 - `mean(sentence, answer, wrongs, note)`: what does this idiom mean?

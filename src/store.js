@@ -7,7 +7,7 @@ export const DAILY_GOAL = 30;
 export const XP_PER_LEVEL = 150;
 
 const initial = () => ({
-  profile: { name: '', avatar: '0', lang: 'id', sound: true, voice: true, onboarded: false },
+  profile: { name: '', avatar: '0', lang: 'id', level: 'b2', sound: true, voice: true, onboarded: false },
   xp: 0,
   streak: 0,
   lastDay: null,
